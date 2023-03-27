@@ -1,0 +1,69 @@
+<h3>Checkout</h3>
+<form #form="ngForm" (ngSubmit)="onCheckout()" class="checkout">
+  <label>Full Name</label>
+  <input
+    type="text"
+    required
+    name="fullName"
+    #name="ngModel"
+    placeholder="John Doe"
+    [(ngModel)]="fullName"
+  />
+  <label>Address</label>
+  <input
+    type="text"
+    required
+    name="address"
+    placeholder="Ave"
+    [(ngModel)]="address"
+  />
+  <label>City</label>
+  <input
+    type="text"
+    required
+    name="city"
+    #ciity="ngModel"
+    [(ngModel)]="city"
+    placeholder="Nairobi"
+  />
+  <label>Credit Card Number</label>
+  <input
+    type="text"
+    required
+    name="creditCard"
+    [(ngModel)]="creditCard"
+    placeholder="12345677888"
+    minlength="8"
+    maxlength="19"
+    #crediitCard="ngModel"
+  />
+  <app-button
+    type="submit"
+    [disabled]="form.invalid || false"
+    variant="primary"
+    buttonText="Buy Now"
+  ></app-button>
+</form>
+<div class="errorMessage">
+  <div *ngIf="name.invalid && name.dirty">
+    <div *ngIf="name.errors?.['required']">Please enter your full name.</div>
+  </div>
+  <div *ngIf="form.controls['address'].invalid && form.controls['address'].dirty">
+    <div *ngIf="form.controls['address'].errors?.['required']">
+      Please enter your address (street and street number).
+    </div>
+  </div>
+  <div *ngIf="ciity.invalid && ciity.dirty">
+    <div *ngIf="ciity.errors?.['required']">Please enter your city.</div>
+  </div>
+  <div *ngIf="crediitCard.invalid && crediitCard.dirty">
+    <div *ngIf="crediitCard.errors?.['required']">
+      Please enter your credit card.
+    </div>
+    <div *ngIf="crediitCard.errors?.['minlength']">
+      Your credit card number must be at least 8 digits long
+    </div>
+  </div>
+</div>
+
+

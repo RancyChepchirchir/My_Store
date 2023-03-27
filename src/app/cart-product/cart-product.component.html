@@ -1,0 +1,14 @@
+<div class="product" *ngIf="product">
+    <img src="{{ product.url }}" />
+    <div class="productDetail">
+      <app-amount-selector
+        [(amount)]="productAmount"
+        (amountChange)="updateAmount($event)"
+      ></app-amount-selector>
+      <app-button
+        buttonText="Remove"
+        variant="secondary"
+        (click)="removeProduct()"
+      ></app-button>
+    </div>
+  </div>

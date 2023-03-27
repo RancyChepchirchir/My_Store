@@ -1,0 +1,36 @@
+.productCard {
+    width: 15em;
+    height: auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productCard img {
+    width: 100%;
+    height: auto;
+}
+
+.divider {
+    width: 90%;
+    margin: .5em auto;
+    height: 1px;
+    background-color: black;
+}
+
+.productTitle {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selector {
+  width: 60%;
+}
+
+.submit {
+  width: 60%;
+}

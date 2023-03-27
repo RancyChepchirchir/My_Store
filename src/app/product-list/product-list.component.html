@@ -1,0 +1,18 @@
+<div>
+    <div class="productList" *ngIf="contentLoaded; else loading">
+      <app-product-item *ngFor="let product of products;" [product]="product"></app-product-item>
+    </div>
+    <ng-template #loading>
+      <div class="productList">
+        <ngx-skeleton-loader [appearance]="'circle'" [count]="12"
+          [theme]="{
+              height: '25em',
+              width: '15em',
+              'border-radius': '0',
+              margin: '1em'
+          }"
+        ></ngx-skeleton-loader>
+      </div>
+    </ng-template>
+  </div>
+  

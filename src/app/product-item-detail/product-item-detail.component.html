@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="productDetail" *ngIf="product">
+    
+    <div style = "height: 60vh;">
+      <img style = "max-height: 100%;" [src]="product.url" />
+      
+    </div>  
+    <div class="productInfo">
+      <h3 class="productHeader">{{ product.name }}</h3>
+      <p class="productDescription">{{ product.description }}</p>
+      <p>Price: {{ product.price }}$</p>
+      <app-amount-selector class="productAmount" [(amount)]="productAmount"></app-amount-selector>
+      <div class="buttonGroup">
+        <app-button (click)="addToCart()" [buttonText]="'Add to cart'"></app-button>
+        <app-button (click)="goBack()" [buttonText]="'Go back'" [variant]="'secondary'"></app-button>
+      </div>
+    </div>
+  </div>    
+</div>

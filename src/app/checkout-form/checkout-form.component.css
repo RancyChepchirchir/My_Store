@@ -1,0 +1,24 @@
+.checkout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+  margin-bottom: .5em;
+  height: 2em;
+}
+
+.errorMessage {
+  width: max-content;
+  color: red;
+}
+
+.errorMessage > *:first-child {
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+.errorMessage > *:not(:last-child) {
+  margin-bottom: .5em;
+}

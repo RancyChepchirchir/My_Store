@@ -1,0 +1,19 @@
+<div class="productCard" *ngIf="product">
+    <a routerLink="/product/{{ product.id }}">
+      <img src="{{ product.url }}" />
+    </a>
+    <div class="productTitle">
+      <h4>{{ product.name }}</h4>
+      <p>{{ product.price }}€</p>
+    </div>
+    <div class="divider"></div>
+    <app-amount-selector
+      class="selector"
+      [(amount)]="productAmount"
+    ></app-amount-selector>
+    <app-button
+      class="submit"
+      (click)="addToCart()"
+      buttonText="Add to cart"
+    ></app-button>
+  </div>
